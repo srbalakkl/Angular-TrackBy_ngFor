@@ -1,0 +1,19 @@
+<ul *ngFor="let usr of users;trackBy:trackById">
+  <li>{{usr.name}}</li>
+</ul>
+
+<p>TrackBy is a directive that can work with ngFor to identify items in a list of DOM elements
+  like a list or array to perform unique updates in the DOM,
+  improving the speed and performance.</p>
+
+<button type="button" (click)="addAnotherObject()">add Object using normal way</button>
+
+<p>Note : if u check the elements tab in dev console <em>without</em> track by,U can see
+that the entire array of li elements are rendering. <br>
+
+This issue is fixed by using the trackBy </p>
+
+<h1>another way to fix this issue is </h1><br>
+<p>this.users.push(newUser); <br>
+   this.users = [...this.users, newUser];
+</p>
